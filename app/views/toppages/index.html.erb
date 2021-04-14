@@ -1,10 +1,44 @@
 <% if logged_in? %>
   <p>ログイン完了ユーザ: <%= current_user.name %></p>
 <% else %>
-  <div class="center jumbotron">
-    <div class="text-center">
-      <h1>Welcome to the Microposts</h1>
-      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
-    </div>
+
+  <div class='logo text-center'>
+  <h1><%= link_to image_tag('iu2.jpg', class: 'logo')%></h1>
   </div>
-<% end %>
+      <div class="cover text-black text-center py-5">
+        <h1 class="display-4 mb-4">温泉の魅力を再度発信</h1>
+         <%= link_to '新規登録', signup_path, class: 'btn btn-lg btn-primary' %>
+      </div>
+        <h2 class="text-center mb-5">このサイトは温泉好きが集まるコミュニティーサイトです。</h2>
+        <section class="bg-light text-center py-5">
+            <h2 class="mb-5">例えばこんな悩みを抱えている人</h2>
+            <div class="container">
+              <table class="table table-hover">
+                <tbody>
+                  <tr><td>休日ふと温泉が行きたくなった</td></tr>
+                  <tr><td>誰かと一緒に近くの温泉に行きたい</td></tr>
+                  <tr><td>近隣サウナに行きたい</td></tr>
+                  <tr><td>近隣で岩盤浴がある場所に行きたい</td></tr>
+                </tbody>
+              </table>
+            </div>
+        </section>
+            <div class="container">
+              <div class="col-mb-sm text-center py-3">
+                <div class="you">
+                  <h3>そんなあなたのお悩みを解決致します</h3>
+                </div>
+              </div>
+                </div> 
+                </body>
+    <footer>
+      <div class="container py-5 mt-5 text-center">
+        <a href=jojo1.html>管理人プロフィール</a><br>
+        <a href=jojo2.html>プライバシーポリシー |</a>
+        <a href=jojo3.html>利用規約 </a><br>
+        <a href=jojo4.html>お問い合わせ </a>
+      </div>
+      </div>
+    </footer>
+    
+    <% end %>
