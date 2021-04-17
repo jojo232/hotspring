@@ -1,22 +1,38 @@
-<h1>id: <%= @user.id %> のマイページ編集詳細ページ</h1>
+<h1>マイページ編集詳細ページ</h1>
 
-<table class="table table-bordered">
+
+  
+<%= form_with(model: @user, local: true) do |f| %>
+
+<%= link_to user_path(user) do %>
+<%= attachment_image_tag user, :image, fallback: "no-image.png" %>
+%>
+
   <tr>
-    <th>id</th>
-    <td><%= @user.id %></td>
+    <%= f.label :name, '名前' %>
+    <%= f.text_field :name, class: 'form-control' %>
   </tr>
+  
   <tr>
-    <th>タスク</th>
-    <td><%= @user.content %></td>
+    <%= f.label :introduction, '自己紹介' %>
+    <%= f.text_field :introduction, class: 'form-control' %>
   </tr>
+  
   <tr>
-    <th>内容</th>
-    <td><%= @user.status %></td>
+    <%= f.label :recommend, 'おすすめ温泉スポット' %>
+    <%= f.text_field :recommend, class: 'form-control' %>
   </tr>
-</table>
+
+  <tr>
+    <%= f.label :email, 'Eメール' %>
+    <%= f.text_field :email, class: 'form-control' %>
+  </tr>
+
+
+<%= f.submit '更新する', class: 'btn btn-primary btn-block' %>
+
+  <% end %>
 
 
 <%= link_to '一覧に戻る', users_path, class: 'btn btn-light' %>
-<%= link_to 'マイページを編集する', edit_user_path(@task), class: 'btn btn-light' %>
-
 
